@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>breem - NISHIMUSA SHUNSUKE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 2rem;
+            background: #000;
+            color: #fff;
+            position: relative;
+        }
+        header h1, header h2, header p {
+            font-family: 'Courier New', monospace;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #00ff00, #ff00ff, #00ffff, #ff0000, #0000ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 5s infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            background: #333;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav ul li a:hover {
+            background: #555;
+        }
+        main {
+            padding: 2rem;
+            text-align: center;
+            flex: 1;
+        }
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            background: #000;
+            color: #fff;
+        }
+        .element-symbols {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: -1;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-around;
+            justify-content: space-around;
+        }
+        .element-symbol {
+            font-size: 2rem;
+            color: #fff;
+            margin: 1rem;
+            opacity: 0.2;
+        }
+        .instagram-icon {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="element-symbols">
+            <div class="element-symbol">H</div>
+            <div class="element-symbol">He</div>
+            <div class="element-symbol">Li</div>
+            <div class="element-symbol">Be</div>
+            <div class="element-symbol">B</div>
+            <div class="element-symbol">C</div>
+            <div class="element-symbol">N</div>
+            <div class="element-symbol">O</div>
+            <div class="element-symbol">F</div>
+            <div class="element-symbol">Ne</div>
+        </div>
+        <h1>breem</h1>
+        <h2>NISHIMUSA SHUNSUKE</h2>
+        <p>music lab..</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="information.html">INFORMATION</a></li>
+            <li><a href="biography.html">BIOGRAPHY</a></li>
+            <li><a href="works.html">WORKS</a></li>
+            <li><a href="diary.html">DIARY</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="link.html">LINK</a></li>
+            <li><a href="https://www.instagram.com/breem.room_4473?igsh=MW8zaDFxZTgzOG91Zg%3D%3D&utm_source=qr" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="instagram-icon">
+            </a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>Welcome to the official website of NISHIMUSA SHUNSUKE.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 NISHIMUSA SHUNSUKE</p>
+    </footer>
+</body>
+</html>
