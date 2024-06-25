@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container label {
+            margin: 10px 0 5px;
+        }
+        .form-container input, .form-container textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contact</h1>
+    </header>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="news.html">NEWS</a>
+        <a href="biography.html">BIOGRAPHY</a>
+        <a href="works.html">WORKS</a>
+        <a href="diary.html">DIARY</a>
+        <a href="link.html">LINK</a>
+    </nav>
+    <section>
+        <h2>Contact Form</h2>
+        <p>リールのメンテナンスやお仕事のご相談や依頼につきましては、上記のフォームまたは ototohi@gmail.com までご連絡ください。For any inquiries, please contact us at ototohi@gmail.com or send us a message using the form.</p>
+        <form action="https://formspree.io/f/{your_form_id}" method="POST" class="form-container">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+            <button type="submit">SEND</button>
+        </form>
+        <p>Your message is sent successfully. Thank you!</p>
+    </section>
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/breem.room_4473/" target="_blank">Instagram</a>
+            <a href="https://soundcloud.com/user-677174121?ref=clipboard&p=i&c=1&si=F8DD101CC7C84DA79F24F7A3963DEE54&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">SOUND CLOUD</a>
+            <a href="https://www.google.com/search?client=safari&sca_esv=586991778&hl=ja-jp&cs=0&output=search&q=breem(%E4%BA%88%E7%B4%84%E5%88%B6%EF%BC%89&ludocid=16604240465442619194&ibp=gwp;0,7&lsig=AB86z5WFG0y4R09pLiqGTn1mTXD4&kgs=ee5e0b5aa7cc6396&shndl=-1&shem=lcspc,lsp&source=sh/x/loc/hdr/m1/3" target="_blank">Googlepage</a>
+        </div>
+        <p>office: breem music lab & Reel maintenance</p>
+        <p>739-2402 広島県安芸津町三津4473-3 本宮アパート1F</p>
+    </footer>
+</body>
+</html>
