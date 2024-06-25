@@ -80,15 +80,22 @@
         <a href="contact.html">CONTACT</a>
         <a href="Reel Maintenance>LINK</a>
     </nav>
-    <div class="contact-form">
-        <h2>CONTACT</h2>
-        <form action="mailto:ototohi@gmail.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="mail" placeholder="Email" required>
-            <textarea name="message" placeholder="Message" required></textarea>
-            <button type="submit">SEND</button>
-        </form>
-        <p>Your message is sent successfully. Thank you!</p>
+   <div class="contact-form-container">
+    <h2>CONTACT</h2>
+    <form action="mailto:ototohi@gmail.com" method="post" enctype="text/plain">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="mail">Mail</label>
+        <input type="email" id="mail" name="mail" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">SEND</button>
+    </form>
+    <p class="success-message">Your message is sent succesfully. Thank you!</p>
+</div>
         <p>リールのメンテナンスやお仕事のご相談や依頼につきましては、上記のフォームまたはototohi@gmail.comまでご連絡ください。</p>
         <p>For any inquiries, please contact us at ototohi@gmail.com or send us a message using the form.</p>
         <p>
