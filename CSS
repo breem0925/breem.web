@@ -1,0 +1,42 @@
+.contact-form-container {
+    max-width: 400px; /* 最大幅を指定 */
+    margin: auto; /* 中央寄せ */
+    padding: 20px; /* 内側の余白 */
+    border: 1px solid #ccc; /* 枠線 */
+    background-color: #f9f9f9; /* 背景色 */
+}
+
+.contact-form-container h2 {
+    font-size: 1.5rem; /* 見出しのフォントサイズ */
+    margin-bottom: 10px; /* 見出しの下の余白 */
+}
+
+.contact-form-container form {
+    display: grid; /* グリッドレイアウトを使用 */
+    gap: 10px; /* 要素間の間隔 */
+}
+
+.contact-form-container label {
+    font-weight: bold; /* ラベルの太字 */
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 100%; /* 入力フィールドを幅100%にする */
+    padding: 8px; /* 内側の余白 */
+    border: 1px solid #ccc; /* 枠線 */
+}
+
+.contact-form-container button {
+    width: 100%; /* 送信ボタンを幅100%にする */
+    padding: 10px; /* 内側の余白 */
+    background-color: #4CAF50; /* ボタンの背景色 */
+    color: white; /* ボタンの文字色 */
+    border: none; /* 枠線をなくす */
+    cursor: pointer; /* マウスオーバー時のカーソル形状 */
+}
+
+.contact-form-container .success-message {
+    margin-top: 10px; /* 成功メッセージの上の余白 */
+    color: #4CAF50; /* 成功メッセージの文字色 */
+}
