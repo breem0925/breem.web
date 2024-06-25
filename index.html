@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>breem NISHIMURA SHUNSUKE music lab..</title>
+    <title>breem NISHIMURA SHUNSUKE music lab....</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -37,6 +37,33 @@
             color: #000;
             font-weight: bold;
         }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+        }
+        .contact-form {
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -50,6 +77,40 @@
         <a href="biography.html">BIOGRAPHY</a>
         <a href="works.html">WORKS</a>
         <a href="diary.html">DIARY</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="link.html">LINK</a>
     </nav>
+    <div class="contact-form">
+        <h2>CONTACT</h2>
+        <form action="mailto:ototohi@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="mail" placeholder="Email" required>
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">SEND</button>
+        </form>
+        <p>Your message is sent successfully. Thank you!</p>
+        <p>リールのメンテナンスやお仕事のご相談や依頼につきましては、上記のフォームまたはototohi@gmail.comまでご連絡ください。</p>
+        <p>For any inquiries, please contact us at ototohi@gmail.com or send us a message using the form.</p>
+        <p>
+            <a href="https://www.instagram.com/breem.room_4473/">
+                <img src="instagram-icon.png" alt="Instagram" style="width:24px;height:24px;"> Instagram
+            </a>
+        </p>
+        <p>
+            <a href="https://soundcloud.com/user-677174121?ref=clipboard&p=i&c=1&si=F8DD101CC7C84DA79F24F7A3963DEE54&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+                <img src="soundcloud-icon.png" alt="SoundCloud" style="width:24px;height:24px;"> SoundCloud
+            </a>
+        </p>
+        <p>
+            <a href="https://www.google.com/search?client=safari&sca_esv=586991778&hl=ja-jp&cs=0&output=search&q=breem(%E4%BA%88%E7%B4%84%E5%88%B6%EF%BC%89&ludocid=16604240465442619194&ibp=gwp;0,7&lsig=AB86z5WFG0y4R09pLiqGTn1mTXD4&kgs=ee5e0b5aa7cc6396&shndl=-1&shem=lcspc,lsp&source=sh/x/loc/hdr/m1/3">
+                <img src="google-icon.png" alt="Google" style="width:24px;height:24px;"> Google
+            </a>
+        </p>
+    </div>
+    <footer>
+        <p>office: breem music lab & Reel maintenance</p>
+        <p>〒739-2402 広島県安芸津町三津4473-3 本宮アパート1F</p>
+        <p>Unauthorized duplication is a violation of applicable laws.（無断転載は法律違反です。）</p>
+    </footer>
 </body>
 </html>
