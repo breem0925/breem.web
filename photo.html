@@ -5,7 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHOTO</title>
     <style>
-        /* Add your styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 300px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+        }
+        .social-links {
+            margin-bottom: 10px;
+        }
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .home-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #fff;
+            text-decoration: none;
+            animation: blink-animation 1s steps(5, start) infinite;
+            -webkit-animation: blink-animation 1s steps(5, start) infinite;
+        }
+        .home-link:hover {
+            animation: none;
+        }
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+        @-webkit-keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
     </style>
 </head>
 <body>
@@ -13,16 +70,34 @@
         <h1>PHOTO</h1>
     </header>
     <section>
-        <!-- Add your photo gallery content here -->
         <h2>Photo Gallery</h2>
         <div class="gallery">
-            <!-- Example image -->
-            <img src="path/to/your/photo.jpg" alt="Photo 1">
+            <!-- Example images -->
+            <img src="path/to/your/photo1.jpg" alt="Photo 1">
+            <img src="path/to/your/photo2.jpg" alt="Photo 2">
+            <img src="path/to/your/photo3.jpg" alt="Photo 3">
             <!-- Add more images as needed -->
         </div>
     </section>
     <footer>
-        <!-- Add your footer content here -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/breem.room_4473/">Instagram</a>
+            <a href="https://soundcloud.com/">Soundcloud</a>
+        </div>
+        <p>office: breem music lab & Reel maintenance</p>
+        <p>〒739-2402 広島県安芸津町三津4473-3 本宮アパート1F</p>
+        <p>当サイトの情報を転載、複製、改変等は禁止いたします 卟力感謝します</p>
+        <p>This site information is copyrighted. Unauthorized reproduction, modification, or copying is prohibited.</p>
+        <p>谢谢你</p>
+        <p>‎السَّلَامُ عَلَيْكُمْ</p>
+        <a href="index.html" class="home-link">Home</a>
     </footer>
+
+    <script>
+        const homeLink = document.querySelector('.home-link');
+        homeLink.addEventListener('mouseover', function() {
+            this.style.animation = 'none';
+        });
+    </script>
 </body>
 </html>
