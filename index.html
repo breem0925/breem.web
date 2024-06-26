@@ -17,6 +17,9 @@
             color: white;
             text-align: center;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         h2, h3 {
             margin: 0;
@@ -40,17 +43,24 @@
             text-align: center;
             margin: 20px 0;
         }
-        nav a {
-            margin: 0 15px;
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
             text-decoration: none;
             color: #000;
             font-weight: bold;
         }
         #contact {
-            background-color: #333;
+            background-color: #eee;
             padding: 40px 20px;
             text-align: center;
-            color: white;
         }
         .contact-form {
             background-color: #fff;
@@ -65,7 +75,6 @@
         .contact-form label {
             display: block;
             margin-bottom: 10px;
-            color: #333;
         }
         .contact-form input[type="email"],
         .contact-form textarea {
@@ -75,8 +84,6 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             resize: vertical;
-            background-color: #fff;
-            color: #333;
         }
         .contact-form textarea {
             height: 150px;
@@ -107,8 +114,8 @@
 </head>
 <body>
     <header>
-        <h2>breem</h2>
-        <h2>NISHIMURA SHUNSUKE</h2>
+        <h2>Breem</h2>
+        <h3>NISHIMURA SHUNSUKE</h3>
         <h3>music lab<span class="dots">.....</span></h3>
     </header>
 
@@ -144,7 +151,7 @@
     <footer>
         <div class="social-links">
             <a href="https://www.instagram.com/breem.room_4473/">Instagram</a>
-            <a href="https://soundcloud.com/">Soundcloud</a>
+            <a href="https://soundcloud.com/">soundcloud</a>
         </div>
         <p>office: breem music lab & Reel maintenance</p>
         <p>〒739-2402 広島県安芸津町三津4473-3 本宮アパート1F</p>
@@ -153,5 +160,14 @@
         <p>谢谢你</p>
         <p>السَّلَامُ عَلَيْكُمْ</p>
     </footer>
+
+    <script>
+        // Animation for .....
+        const dots = document.querySelector('.dots');
+
+        setInterval(() => {
+            dots.style.visibility = dots.style.visibility === 'hidden' ? 'visible' : 'hidden';
+        }, 500);
+    </script>
 </body>
 </html>
