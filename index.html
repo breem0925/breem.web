@@ -5,6 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Breem - NISHIMURA SHUNSUKE</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+        }
+        #contact {
+            background-color: black;
+            padding: 20px;
+            text-align: center;
+        }
+        .contact-form {
+            background-color: #222222;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #fff; /* 枠線を白に設定 */
+            border-radius: 4px;
+            resize: vertical;
+            background-color: transparent; /* 入力欄の背景を透明に */
+            color: #fff; /* 文字色を白に */
+            text-align: center; /* 中央揃え */
+        }
+        .contact-form textarea {
+            height: 150px; /* メッセージ入力枠の高さを調整 */
+        }
+        .contact-form button {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .contact-form button:hover {
+            background-color: #eee;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,18 +96,16 @@
         </ul>
     </nav>
 
-    <section id="contact" style="background-color: black;">
+    <section id="contact">
         <h1 style="color: white;">CONTACT</h1>
-        <div class="contact-form" style="background-color: #222222; color: white;">
+        <div class="contact-form">
             <form action="https://formspree.io/f/manwwarl" method="POST">
-                <label>
-                    Your email:
-                    <input type="email" name="email" required>
-                </label>
-                <label>
-                    Your message:
-                    <textarea name="message" required></textarea>
-                </label>
+                <label for="email">Your email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Your message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
                 <button type="submit">Send</button>
             </form>
             <p style="color: white;">Your message is sent successfully. Thank you!</p>
@@ -45,7 +117,7 @@
     <footer>
         <div class="social-links">
             <a href="https://www.instagram.com/breem.room_4473/" style="color: white;">Instagram</a>
-            <a href="https://soundcloud.com/" style="color: white;">soundcloud</a>
+            <a href="https://soundcloud.com/" style="color: white;">Soundcloud</a>
         </div>
         <p style="color: white;">office: breem music lab & Reel maintenance</p>
         <p style="color: white;">〒739-2402 広島県安芸津町三津4473-3 本宮アパート1F</p>
