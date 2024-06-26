@@ -20,12 +20,6 @@
             padding: 20px;
             position: relative; /* ロゴを最上部に配置するための相対位置 */
         }
-        header .logo {
-            position: absolute;
-            top: 10px; /* ロゴの位置調整 */
-            left: 20px; /* ロゴの位置調整 */
-            max-width: 200px;
-        }
         nav {
             text-align: center;
             margin: 20px 0;
@@ -37,13 +31,13 @@
             font-weight: bold;
         }
         #contact {
-            background-color: #eee; /* 薄いグレー */
+            background-color: #333; /* 薄いグレー */
             padding: 40px 20px;
             text-align: center;
         }
         .contact-form {
             background-color: #fff;
-            color: #fff;
+            color: #333;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -54,6 +48,7 @@
         .contact-form label {
             display: block;
             margin-bottom: 10px;
+            color: #333; /* ラベルのテキスト色 */
         }
         .contact-form input[type="email"],
         .contact-form textarea {
@@ -63,6 +58,8 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             resize: vertical;
+            background-color: #fff; /* 入力フォームの背景色 */
+            color: #333; /* 入力フォームのテキスト色 */
         }
         .contact-form textarea {
             height: 150px;
@@ -81,6 +78,7 @@
         .dots {
             animation: blink-animation 1s steps(5, start) infinite;
             -webkit-animation: blink-animation 1s steps(5, start) infinite;
+            color: white; /* .....の点滅のテキスト色 */
         }
         @keyframes blink-animation {
             to {
@@ -107,9 +105,6 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="path_to_your_logo_image" alt="breem logo">
-        </div>
         <h2>NISHIMURA SHUNSUKE</h2>
         <h3>music lab<span class="dots">.....</span></h3>
     </header>
@@ -122,37 +117,38 @@
             <li><a href="diary.html">DIARY</a></li>
         </ul>
     </nav>
-    <section id="contact" style="background-color: #333; color: #fff;">
-    <h1 style="text-align: center;">CONTACT</h1>
-    <div class="contact-form" style="background-color: #fff; color: #fff; padding: 20px; text-align: center;">
-        <form action="https://formspree.io/f/manwwarl" method="POST">
-            <label style="display: block; margin-bottom: 10px;">
-                Your email:
-                <input type="email" name="email" style="width: 100%; padding: 10px; margin-top: 5px;">
-            </label>
-            <label style="display: block; margin-bottom: 10px;">
-                Your message:
-                <textarea name="message" style="width: 100%; height: 150px; padding: 10px; margin-top: 5px;"></textarea>
-            </label>
-            <button type="submit" style="background-color: #000; color: #fff; border: none; padding: 10px 20px; cursor: pointer;">Send</button>
-        </form>
-        <p style="color: #333; margin-top: 10px;">Your message is sent successfully. Thank you!</p>
-        <p>リールのメンテナンス、お仕事のご相談や依頼につきましては、上記のフォームまたは <a href="mailto:ototohi@gmail.com" style="color: #333;">ototohi@gmail.com</a> までご連絡ください。</p>
-        <p style="color: #333;">For any inquiries, please contact us at <a href="mailto:ototohi@gmail.com" style="color: #333;">ototohi@gmail.com</a> or send us a message using the form.</p>
-    </div>
-</section>
+
+    <section id="contact">
+        <h1 style="color: white;">CONTACT</h1>
+        <div class="contact-form">
+            <form action="https://formspree.io/f/manwwarl" method="POST">
+                <label>
+                    Your email:
+                    <input type="email" name="email" required>
+                </label>
+                <label>
+                    Your message:
+                    <textarea name="message" required></textarea>
+                </label>
+                <button type="submit">Send</button>
+            </form>
+            <p>Your message is sent successfully. Thank you!</p>
+            <p>リールのメンテナンス、お仕事のご相談や依頼につきましては、上記のフォームまたは <a href="mailto:ototohi@gmail.com">ototohi@gmail.com</a> までご連絡ください。</p>
+            <p>For any inquiries, please contact us at <a href="mailto:ototohi@gmail.com">ototohi@gmail.com</a> or send us a message using the form.</p>
+        </div>
+    </section>
 
     <footer>
         <div class="social-links">
-            <a href="https://www.instagram.com/breem.room_4473/" style="color: white;">Instagram</a>
-            <a href="https://soundcloud.com/" style="color: white;">soundcloud</a>
+            <a href="https://www.instagram.com/breem.room_4473/">Instagram</a>
+            <a href="https://soundcloud.com/">soundcloud</a>
         </div>
-        <p style="color: white;">office: breem music lab & Reel maintenance</p>
-        <p style="color: white;">〒739-2402 広島県安芸津町三津4473-3 本宮アパート1F</p>
-        <p style="color: white;">当サイトの情報を転載、複製、改変等は禁止いたします 協力感謝します</p>
-        <p style="color: white;">This site information is copyrighted. Unauthorized reproduction, modification, or copying is prohibited.</p>
-        <p style="color: white;">谢谢你</p>
-        <p style="color: white;">السَّلَامُ عَلَيْكُمْ</p>
+        <p>office: breem music lab & Reel maintenance</p>
+        <p>〒739-2402 広島県安芸津町三津4473-3 本宮アパート1F</p>
+        <p>当サイトの情報を転載、複製、改変等は禁止いたします 協力感謝します</p>
+        <p>This site information is copyrighted. Unauthorized reproduction, modification, or copying is prohibited.</p>
+        <p>谢谢你</p>
+        <p>السَّلَامُ عَلَيْكُمْ</p>
     </footer>
 </body>
 </html>
