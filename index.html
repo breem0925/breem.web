@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Breem - NISHIMURA SHUNSUKE</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -18,7 +17,24 @@
             color: white;
             text-align: center;
             padding: 20px;
-            position: relative; /* ロゴを最上部に配置するための相対位置 */
+        }
+        h2, h3 {
+            margin: 0;
+        }
+        .dots {
+            animation: blink-animation 1s steps(5, start) infinite;
+            -webkit-animation: blink-animation 1s steps(5, start) infinite;
+            color: white;
+        }
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+        @-webkit-keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
         }
         nav {
             text-align: center;
@@ -31,9 +47,10 @@
             font-weight: bold;
         }
         #contact {
-            background-color: #333; /* 薄いグレー */
+            background-color: #333;
             padding: 40px 20px;
             text-align: center;
+            color: white;
         }
         .contact-form {
             background-color: #fff;
@@ -48,7 +65,7 @@
         .contact-form label {
             display: block;
             margin-bottom: 10px;
-            color: #333; /* ラベルのテキスト色 */
+            color: #333;
         }
         .contact-form input[type="email"],
         .contact-form textarea {
@@ -58,8 +75,8 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             resize: vertical;
-            background-color: #fff; /* 入力フォームの背景色 */
-            color: #333; /* 入力フォームのテキスト色 */
+            background-color: #fff;
+            color: #333;
         }
         .contact-form textarea {
             height: 150px;
@@ -74,21 +91,6 @@
         }
         .contact-form button:hover {
             background-color: #333;
-        }
-        .dots {
-            animation: blink-animation 1s steps(5, start) infinite;
-            -webkit-animation: blink-animation 1s steps(5, start) infinite;
-            color: white; /* .....の点滅のテキスト色 */
-        }
-        @keyframes blink-animation {
-            to {
-                visibility: hidden;
-            }
-        }
-        @-webkit-keyframes blink-animation {
-            to {
-                visibility: hidden;
-            }
         }
         footer {
             background-color: black;
@@ -105,6 +107,7 @@
 </head>
 <body>
     <header>
+        <h2>breem</h2>
         <h2>NISHIMURA SHUNSUKE</h2>
         <h3>music lab<span class="dots">.....</span></h3>
     </header>
@@ -119,7 +122,7 @@
     </nav>
 
     <section id="contact">
-        <h1 style="color: white;">CONTACT</h1>
+        <h1>CONTACT</h1>
         <div class="contact-form">
             <form action="https://formspree.io/f/manwwarl" method="POST">
                 <label>
@@ -141,7 +144,7 @@
     <footer>
         <div class="social-links">
             <a href="https://www.instagram.com/breem.room_4473/">Instagram</a>
-            <a href="https://soundcloud.com/">soundcloud</a>
+            <a href="https://soundcloud.com/">Soundcloud</a>
         </div>
         <p>office: breem music lab & Reel maintenance</p>
         <p>〒739-2402 広島県安芸津町三津4473-3 本宮アパート1F</p>
