@@ -34,16 +34,18 @@
             color: #fff;
         }
         .contact-form {
-            background-color: #fff;
+            background-color: #000;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             margin: auto;
+            text-align: center;
         }
         .contact-form label {
             display: block;
             margin-bottom: 10px;
+            color: #fff;
         }
         .contact-form input[type="email"],
         .contact-form textarea {
@@ -54,16 +56,19 @@
             border-radius: 4px;
             resize: vertical;
         }
+        .contact-form textarea {
+            height: 150px; /* メッセージ入力枠の高さを調整 */
+        }
         .contact-form button {
-            background-color: #000;
-            color: #fff;
+            background-color: #fff;
+            color: #000;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 4px;
         }
         .contact-form button:hover {
-            background-color: #333;
+            background-color: #eee;
         }
     </style>
 </head>
@@ -87,24 +92,24 @@
         <h1>CONTACT</h1>
         <div class="contact-form">
             <form action="https://formspree.io/f/manwwarl" method="POST">
-                <label for="email">Your email:</label>
+                <label for="email" style="color: #fff;">Your email:</label>
                 <input type="email" id="email" name="email" required>
                 
-                <label for="message">Your message:</label>
+                <label for="message" style="color: #fff;">Your message:</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
                 
                 <button type="submit">SEND</button>
             </form>
-            <p>Your message is sent successfully. Thank you!</p>
-            <p>リールのメンテナンス、お仕事のご相談や依頼につきましては、上記のフォームまたは <a href="mailto:ototohi@gmail.com">ototohi@gmail.com</a> までご連絡ください。</p>
-            <p>For any inquiries, please contact us at <a href="mailto:ototohi@gmail.com">ototohi@gmail.com</a> or send us a message using the form.</p>
+            <p style="color: #fff;">Your message is sent successfully. Thank you!</p>
+            <p style="color: #fff;">リールのメンテナンス、お仕事のご相談や依頼につきましては、上記のフォームまたは <a href="mailto:ototohi@gmail.com" style="color: #fff;">ototohi@gmail.com</a> までご連絡ください。</p>
+            <p style="color: #fff;">For any inquiries, please contact us at <a href="mailto:ototohi@gmail.com" style="color: #fff;">ototohi@gmail.com</a> or send us a message using the form.</p>
         </div>
     </section>
 
     <footer>
         <div class="social-links">
-            <a href="https://www.instagram.com/breem.room_4473/">Instagram</a>
-            <a href="https://soundcloud.com/">Soundcloud</a>
+            <a href="https://www.instagram.com/breem.room_4473/" style="color: #fff;">Instagram</a>
+            <a href="https://soundcloud.com/" style="color: #fff;">Soundcloud</a>
         </div>
         <p>office: breem music lab & Reel maintenance</p>
         <p>〒739-2402 広島県安芸津町三津4473-3 本宮アパート1F</p>
