@@ -3,56 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breem - NISHIMURA SHUNSUKE</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <title>DISCOGRAPHY</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        .discography {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .discography img {
+            width: 300px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+        }
+        .social-links {
+            margin-bottom: 10px;
+        }
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .home-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #fff;
+            text-decoration: none;
+            animation: blink-animation 1s steps(5, start) infinite;
+            -webkit-animation: blink-animation 1s steps(5, start) infinite;
+        }
+        .home-link:hover {
+            animation: none;
+        }
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+        @-webkit-keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h2>breem</h2>
-        <h3>NISHIMURA SHUNSUKE</h3>
-        <h3>music lab<span class="dots">.....</span></h3>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="biography.html">BIOGRAPHY</a></li>
-            <li><a href="discography.html">DISCOGRAPHY</a></li>
-            <li><a href="works.html">WORKS</a></li>
-            <li><a href="https://breem.base.shop" target="_blank">SHOP</a></li>
-            <li><a href="https://note.com/breem/" target="_blank">DIARY</a></li>
-        </ul>
-    </nav>
-
-    <section id="discography">
         <h1>DISCOGRAPHY</h1>
-        <div class="album">
-            <img src="path_to_your_cd_jacket_image.jpg" alt="Album Title">
-            <h2>Album Title</h2>
-            <p>Description of the album.</p>
+    </header>
+    <section>
+        <h2>Music Discography</h2>
+        <div class="discography">
+            <!-- Example images -->
+            <img src="path/to/your/album1.jpg" alt="Album 1">
+            <img src="path/to/your/album2.jpg" alt="Album 2">
+            <img src="path/to/your/album3.jpg" alt="Album 3">
+            <!-- Add more images as needed -->
         </div>
-        <!-- Add more albums as needed -->
     </section>
-
     <footer>
         <div class="social-links">
             <a href="https://www.instagram.com/breem.room_4473/">Instagram</a>
-            <a href="https://soundcloud.com/">soundcloud</a>
+            <a href="https://soundcloud.com/">Soundcloud</a>
         </div>
         <p>office: breem music lab & Reel maintenance</p>
         <p>〒739-2402 広島県安芸津町三津4473-3 本宮アパート1F</p>
         <p>当サイトの情報を転載、複製、改変等は禁止いたします 協力感謝します</p>
         <p>This site information is copyrighted. Unauthorized reproduction, modification, or copying is prohibited.</p>
         <p>谢谢你</p>
-        <p>السَّلَامُ عَلَيْكُمْ</p>
+        <p>‎السَّلَامُ عَلَيْكُمْ</p>
+        <a href="index.html" class="home-link">Home</a>
     </footer>
 
     <script>
-        // Animation for .....
-        const dots = document.querySelector('.dots');
-
-        setInterval(() => {
-            dots.style.visibility = dots.style.visibility === 'hidden' ? 'visible' : 'hidden';
-        }, 500);
+        const homeLink = document.querySelector('.home-link');
+        homeLink.addEventListener('mouseover', function() {
+            this.style.animation = 'none';
+        });
     </script>
 </body>
 </html>
