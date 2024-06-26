@@ -1,137 +1,28 @@
-/* Reset some default styles */
-body, h1, h2, h3, p, pre, ul, li, form, input, textarea, button {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOGRAPHY - Breem</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>BIOGRAPHY</h1>
+    </header>
 
-body {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-    line-height: 1.6;
-}
+    <section>
+        <div class="content">
+            <p>広島県東広島市安芸津町生まれ在住</p>
+            <p>弦楽器や鍵盤シンセやサンプラーや自然の音などを用い、トラックメイクをしループJAMセッション ミキサーを使いDIYミュージックを作成しセッションをしプロデュース、エンジニアリング、ミキシング一人で行っている</p>
+            <p>自然や周波数や元素などを魅せられ、altanativeを主軸にdeephouse.cymatics.psychedeliaや実験的音楽の製作、オーディオビジュアル作品の製作や映像と音楽作品を通じて表現活動を行なっている現在作品に必要な機材集めやアルバム制作中</p>
+            <p>過去の仕事の名残で写真集作成やリールのメンテナンス、リメイクなどにも取り組んでいる</p>
+            <p>また、てんかんの持病と向き合いつつ自分と関わっていく中でてんかんの様々な側面を理解するのに役立てて欲しいと思い日々研究や活動している。</p>
+        </div>
+    </section>
 
-header {
-    text-align: center;
-    padding: 20px;
-}
-
-.ascii-art {
-    font-size: 12px;
-    line-height: 1;
-}
-
-.dots {
-    display: inline-block;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 20px 0;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-}
-
-section {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-section h1 {
-    border-bottom: 1px solid #000000;
-    margin-bottom: 10px;
-    animation: underlineBlink 1s infinite;
-}
-
-@keyframes underlineBlink {
-    0%, 100% { border-color: #000000; }
-    50% { border-color: transparent; }
-}
-
-.contact-form {
-    border: 1px solid #000000;
-    padding: 20px;
-    background-color: #f9f9f9;
-    margin-top: 20px;
-}
-
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form label {
-    margin-top: 10px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #000000;
-    background-color: #ffffff;
-    color: #000000;
-}
-
-.contact-form button {
-    margin-top: 15px;
-    padding: 10px;
-    border: 1px solid #000000;
-    background-color: #ffffff;
-    color: #000000;
-    cursor: pointer;
-}
-
-.contact-form button:hover {
-    background-color: #000000;
-    color: #ffffff;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #f1f1f1;
-}
-
-footer .social-links {
-    margin-bottom: 10px;
-}
-
-footer .social-links a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-}
-
-footer p {
-    margin-top: 5px;
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-}
+    <footer>
+        <p><a href="index.html">Back to Home</a></p>
+    </footer>
+</body>
+</html>
