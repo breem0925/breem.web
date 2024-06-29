@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson & Coaching</title>
+    <title>Reel Maintenance</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -16,120 +16,169 @@
             text-align: center;
             padding: 20px;
         }
-        section {
+        nav {
             text-align: center;
-            margin: 20px auto;
-            width: 80%;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
             margin: 20px 0;
         }
-        table, th, td {
-            border: 2px solid #333; /* 太い罫線 */
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
         }
-        th, td {
+        .maintenance-content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .maintenance-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .price-table {
+            margin: 20px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 2px solid #333;
+            max-width: 600px;
+        }
+        .price-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .price-table th, .price-table td {
             padding: 10px;
+            border: 2px solid #333;
             text-align: center;
         }
         footer {
+            background-color: #333;
+            color: #fff;
             text-align: center;
-            padding: 20px;
-            background: #000;
-            color: #fff;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
-        .home-link {
-            display: block;
-            margin-top: 20px;
-            color: #fff;
-            text-decoration: none;
-        }
-        .home-link:hover {
-            animation: blink-animation 1s steps(5, start) infinite;
-            -webkit-animation: blink-animation 1s steps(5, start) infinite;
-        }
-        @keyframes blink-animation {
-            to {
-                visibility: hidden;
-            }
-        }
-        @-webkit-keyframes blink-animation {
-            to {
-                visibility: hidden;
-            }
+        footer p {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Lesson & Coaching</h1>
+        <h1>Reel Maintenance</h1>
     </header>
-    <section>
-        <h2>業務内容</h2>
-        <table>
-            <tr>
-                <th>カテゴリー</th>
-                <th>内容</th>
-                <th>料金</th>
-            </tr>
-            <tr>
-                <td>弦楽器</td>
-                <td>ギター、ベースetc..</td>
-                <td>1h2000円〜</td>
-            </tr>
-            <tr>
-                <td>鍵盤全般</td>
-                <td>ピアノ、キーボード.シンセサイザー.etc...</td>
-                <td>1h2000円〜</td>
-            </tr>
-            <tr>
-                <td>DJ系電子音楽</td>
-                <td>DJ、エレクトロニックミュージック</td>
-                <td>1h2000円〜</td>
-            </tr>
-            <tr>
-                <td>DTM</td>
-                <td>デスクトップミュージック</td>
-                <td>1h2000円〜</td>
-            </tr>
-            <tr>
-                <td>エフェクターmod楽器メンテナンス関連</td>
-                <td>楽器メンテナンス、エフェクター修理</td>
-                <td>1h2000円〜</td>
-            </tr>
-            <tr>
-                <td>その他</td>
-                <td>聴音訓練/基礎や理論/メタ解説/演奏に必要な視野/作曲理論/スタミナ/グルーブ/ハーモニーを主に教えます。<br>退会は必ず１ヶ月前に連絡ください。</td>
-                <td>1h2000円〜</td>
-            </tr>
-        </table>
-        <p>※コーチングの場合、初めに目的をお伝えください。料金はレッスンとは別料金になりますので、お尋ねください。</p>
-        <p>楽譜の作成は別料金で行っております。主に聴音訓練を行う方針をとっています。</p>
-        <p>楽器の修理作業などもお手伝いしたいですが、機材と部品調達不足のため最低限の道具が揃い次第受注します。</p>
-        <p>音楽の楽しさを教えることを大切にしています。クラシック以外のジャンルも対応可能です。是非、新しい刺激をください。</p>
-    </section>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="news.html">NEWS</a>
+        <a href="biography.html">BIOGRAPHY</a>
+        <a href="works.html">WORKS</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="link.html">LINK</a>
+    </nav>
+    <div class="maintenance-content">
+        <h2>Reel Maintenance Service</h2>
+        <p>修理不可のもの以外は基本的に殆どの修理を引き受けていますが、活動の合間を縫って治していますので、お預かりから2〜3週間かかります。</p>
+        <p>修理不可の理由として、パーツ供給不可や費用の問題などが挙げられます。修理によって見た目が変わる場合もありますが、その際は事前にご相談いたします。</p>
+        <h3>基本料金と注意事項</h3>
+        <p>基本料金は分解洗浄調整のみとなっており、パーツ交換が必要な場合はパーツ代が別途掛かります。なるべく基本料金通りに仕上げるように心がけていますが、状態が悪い場合には追加料金が発生することがあります。</p>
+        <div class="price-table">
+            <h4>料金表</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>種類</th>
+                        <th>説明</th>
+                        <th>価格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>両軸リール（小型）</td>
+                        <td>ベイトリール・バス用など</td>
+                        <td>2,800円〜4,000円</td>
+                    </tr>
+                    <tr>
+                        <td>両軸リール（中型）</td>
+                        <td>ジギングリールなど</td>
+                        <td>3,500円〜5,000円</td>
+                    </tr>
+                    <tr>
+                        <td>両軸リール（大型）</td>
+                        <td>レバードラグ</td>
+                        <td>4,500円〜6,500円</td>
+                    </tr>
+                    <tr>
+                        <td>両軸リール特殊サイズ</td>
+                        <td>トローリングリールなど</td>
+                        <td>5,000円〜</td>
+                    </tr>
+                    <tr>
+                        <td>スピニングリール（小型）</td>
+                        <td>1000番〜3000番</td>
+                        <td>3,500円〜5,500円</td>
+                    </tr>
+                    <tr>
+                        <td>スピニングリール（中型）</td>
+                        <td>3500番〜6000番</td>
+                        <td>3,500円〜6,500円</td>
+                    </tr>
+                    <tr>
+                        <td>スピニングリール（大型）</td>
+                        <td>6000番〜20000番</td>
+                        <td>4,500円〜8,000円</td>
+                    </tr>
+                    <tr>
+                        <td>スピニングレバーブレーキ</td>
+                        <td>1700番〜8000番</td>
+                        <td>4,500円〜6,500円</td>
+                    </tr>
+                    <tr>
+                        <td>電動リール</td>
+                        <td>※機械部分のみ対応</td>
+                        <td>4,500円〜</td>
+                    </tr>
+                    <tr>
+                        <td>ダイレクトリール</td>
+                        <td></td>
+                        <td>1,500円〜</td>
+                    </tr>
+                    <tr>
+                        <td>チューニング</td>
+                        <td>社外品組付け調整など</td>
+                        <td>1,500円〜</td>
+                    </tr>
+                    <tr>
+                        <td>ボールベアリング交換</td>
+                        <td>サイズにより価格が変動</td>
+                        <td>500円〜1,600円</td>
+                    </tr>
+                    <tr>
+                        <td>チューニングベアリング</td>
+                        <td>超高回転型</td>
+                        <td>900円〜3,000円</td>
+                    </tr>
+                    <tr>
+                        <td>その他</td>
+                        <td>ご相談ください</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>※詳細な料金や細かい指定がある場合は<a href="contact.html">お問い合わせ</a>ください。</p>
+        </div>
+        <h3>方針と注意事項</h3>
+        <p>ギアなどはなるべく交換しない方針を目指しています。長く寿命を延ばすという観点からご理解ください。</p>
+        <p>電動リールに関しては、基本的に機械部分のみ対応となります。電気系、モーター、液晶などの修理は専門外となりますが、自己責任となります。一応見ることは可能です。保証外の故障については、一応確認させていただきますが、修理は自己責任でお願いします。</p>
+        <p>マグシールドやコアプロテクトについては原則外し、Xプロテクトは非接触シールドとして残します。詳細は<a href="contact.html">お問い合わせ</a>ください。</p>
+    </div>
     <footer>
-        <div class="social-links">
-            <a href="https://www.instagram.com/breem.room_4473/">Instagram</a>
-            <a href="https://soundcloud.com/">Soundcloud</a>
-        </div>
-        <nav>
-            <a href="biography.html">BIOGRAPHY</a>
-            <a href="discography.html">DISCOGRAPHY</a>
-            <a href="works.html">WORKS</a>
-            <a href="shop.html">SHOP</a>
-            <a href="diary.html">DIARY</a>
-        </nav>
-        <div class="office-info">
-            <p>office: breem music lab & Reel maintenance</p>
-            <p>〒739-2402 広島県安芸津町三津4473-3 本宮アパート1F</p>
-            <p>当サイトの情報を転載、複製、改変等は禁止いたします 協力感謝します</p>
-            <p>This site information is copyrighted. Unauthorized reproduction, modification, or copying is prohibited.</p>
-            <p>谢谢你</p>
-            <p>السَّلَامُ عَلَيْكُمْ</p>
-        </div>
-        <a href="index.html" class="home-link">HOME</a>
+        <p>office: breem music lab & Reel maintenance</p>
+        <p>〒739-2402 広島県安芸津町三津4473-3 本宮アパート1F</p>
+        <p>Unauthorized duplication is a violation of applicable laws.（無断転載は法律違反です。）</p>
     </footer>
 </body>
 </html>
