@@ -105,22 +105,6 @@
         .contact-form button:hover {
             background-color: #333;
         }
-        .preview {
-            display: none;
-            background-color: #f4f4f4;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            margin-top: 20px;
-            text-align: left;
-        }
-        .preview p {
-            margin: 5px 0;
-        }
-        .preview-buttons {
-            text-align: center;
-            margin-top: 10px;
-        }
         footer {
             background-color: black;
             color: white;
@@ -169,36 +153,27 @@
         </div>
         <h1>CONTACT</h1>
         <div class="contact-form">
-            <form id="contactForm">
+            <form id="contactForm" action="https://formspree.io/f/manwwarl" method="POST">
                 <label>
                     Your email:
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
                 </label>
                 <label>
                     Your message:
-                    <textarea name="message" id="message" required></textarea>
+                    <textarea id="message" name="message" required></textarea>
                 </label>
-                <button type="button" onclick="previewMessage()">Preview</button>
+                <button type="button" onclick="confirmSend()">Send</button>
             </form>
+            <p>Your message is sent successfully. Thank you!</p>
+            <p>リールのメンテナンス、お仕事のご相談や依頼につきましては、上記のフォームまたは <a href="mailto:ototohi@gmail.com">ototohi@gmail.com</a> までご連絡ください。</p>
+            <p>For any inquiries, please contact us at <a href="mailto:ototohi@gmail.com">ototohi@gmail.com</a> or send us a message using the form.</p>
         </div>
-        <div class="preview" id="preview">
-            <h2>Message Preview</h2>
-            <p><strong>Email:</strong> <span id="previewEmail"></span></p>
-            <p><strong>Message:</strong></p>
-            <p id="previewMessage"></p>
-            <div class="preview-buttons">
-                <button type="button" onclick="sendMessage()">Send</button>
-                <button type="button" onclick="editMessage()">Edit</button>
-            </div>
-        </div>
-        <p>リールのメンテナンス、お仕事のご相談や依頼につきましては、上記のフォームまたは <a href="mailto:ototohi@gmail.com">ototohi@gmail.com</a> までご連絡ください。</p>
-        <p>For any inquiries, please contact us at <a href="mailto:ototohi@gmail.com">ototohi@gmail.com</a> or send us a message using the form.</p>
     </section>
 
     <footer>
         <div class="social-links">
             <a href="https://www.instagram.com/breem.room_4473/">Instagram</a>
-            <a href="https://soundcloud.com/user-677174121">soundcloud</a>
+            <a href="https://soundcloud.com/">soundcloud</a>
         </div>
         <p>office: breem music lab & Reel maintenance</p>
         <p>〒739-2402 広島県安芸津町三津4473-3 本宮アパート1F</p>
@@ -209,21 +184,19 @@
     </footer>
 
     <script>
-        function previewMessage() {
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            document.getElementById('previewEmail').textContent = email;
-            document.getElementById('previewMessage').textContent = message;
-            document.getElementById('contactForm').style.display = 'none';
-            document.getElementById('preview').style.display = 'block';
-        }
+        // Animation for .....
+        const dots = document.querySelector('.dots');
 
-        function editMessage() {
-            document.getElementById('preview').style.display = 'none';
-            document.getElementById('contactForm').style.display = 'block';
-        }
+        setInterval(() => {
+            dots.style.visibility = dots.style.visibility === 'hidden' ? 'visible' : 'hidden';
+        }, 500);
 
-        function sendMessage() {
-            const form = document.getElementById('contactForm');
-            const action = form.getAttribute('action');
-            form.setAttribute('action', 'https://formspree.io/f/man
+        // Confirmation before sending form
+        function confirmSend() {
+            if (confirm("Are you sure you want to send this message?")) {
+                document.getElementById("contactForm").submit();
+            }
+        }
+    </script>
+</body>
+</html>
