@@ -37,6 +37,7 @@
             animation: blink-animation 1s steps(5, start) infinite;
             -webkit-animation: blink-animation 1s steps(5, start) infinite;
             color: white;
+            cursor: pointer; /* カーソルをポインターに */
         }
         @keyframes blink-animation {
             to {
@@ -120,13 +121,48 @@
             text-decoration: none;
             margin: 0 10px;
         }
+        #tetrisModal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0, 0, 0, 0.9); 
+        }
+        #tetrisContent {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px; 
+        }
+        #tetrisGame {
+            width: 100%; 
+            height: 400px; 
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <header>
         <h2>breem</h2>
         <h3>NISHIMURA SHUNSUKE</h3>
-        <h3>music lab<span class="dots">.....</span></h3>
+        <h3>music lab<span class="dots" onclick="openTetris()">.....</span></h3>
     </header>
 
     <nav>
@@ -187,6 +223,14 @@
         <p>السَّلَامُ عَلَيْكُمْ</p>
     </footer>
 
+    <!-- Tetris Modal -->
+    <div id="tetrisModal">
+        <div id="tetrisContent">
+            <span class="close" onclick="closeTetris()">&times;</span>
+            <canvas id="tetrisGame"></canvas>
+        </div>
+    </div>
+
     <script>
         // Animation for .....
         const dots = document.querySelector('.dots');
@@ -199,6 +243,27 @@
         function confirmSend() {
             if (confirm("Are you sure you want to send this message?")) {
                 document.getElementById("contactForm").submit();
+            }
+        }
+
+        // Tetris game setup
+        function openTetris() {
+            document.getElementById('tetrisModal').style.display = 'block';
+            const canvas = document.getElementById('tetrisGame');
+            // Tetris game initialization here (using a library like tetromino.js)
+            // Example initialization:
+            // new Tetromino(canvas);
+        }
+
+        function closeTetris() {
+            document.getElementById('tetrisModal').style.display = 'none';
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('tetrisModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
             }
         }
     </script>
