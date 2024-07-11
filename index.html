@@ -23,21 +23,21 @@
         }
         h2 {
             margin: 0;
-            font-size: 3em; /* フォントサイズを大きく */
-            max-width: 80%; /* 最大幅を設定 */
-            white-space: nowrap; /* テキストを折り返さない */
-            overflow: hidden; /* オーバーフローを隠す */
-            text-overflow: ellipsis; /* 要素の最後のテキストを省略記号で表現 */
+            font-size: 3em;
+            max-width: 80%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         h3 {
             margin: 5px 0;
-            font-size: 1.5em; /* フォントサイズを小さく */
+            font-size: 1.5em;
         }
         .dots {
             animation: blink-animation 1s steps(5, start) infinite;
             -webkit-animation: blink-animation 1s steps(5, start) infinite;
             color: white;
-            cursor: pointer; /* カーソルをポインターに */
+            cursor: pointer;
         }
         @keyframes blink-animation {
             to {
@@ -227,7 +227,7 @@
     <div id="tetrisModal">
         <div id="tetrisContent">
             <span class="close" onclick="closeTetris()">&times;</span>
-            <canvas id="tetrisGame"></canvas>
+            <canvas id="tetrisGame" width="320" height="640"></canvas>
         </div>
     </div>
 
@@ -249,10 +249,7 @@
         // Tetris game setup
         function openTetris() {
             document.getElementById('tetrisModal').style.display = 'block';
-            const canvas = document.getElementById('tetrisGame');
-            // Tetris game initialization here (using a library like tetromino.js)
-            // Example initialization:
-            // new Tetromino(canvas);
+            initTetris(); // テトリスゲームの初期化
         }
 
         function closeTetris() {
@@ -265,6 +262,202 @@
             if (event.target == modal) {
                 modal.style.display = "none";
             }
+        }
+
+        // テトリスゲームの初期化
+        function initTetris() {
+            const canvas = document.getElementById('tetrisGame');
+            const context = canvas.getContext('2d');
+            const grid = 32;
+            const tetrominoSequence = [];
+
+            // テトリスの各形状
+            const tetrominoes = {
+                'I': [
+                    [0,0,0,0],
+                    [1,1,1,1],
+                    [0,0,0,0],
+                    [0,0,0,0]
+                ],
+                'J': [
+                    [1,0,0],
+                    [1,1,1],
+                    [0,0,0]
+                ],
+                'L': [
+                    [0,0,1],
+                    [1,1,1],
+                    [0,0,0]
+                ],
+                'O': [
+                    [1,1],
+                    [1,1]
+                ],
+                'S': [
+                    [0,1,1],
+                    [1,1,0],
+                    [0,0,0]
+                ],
+                'Z': [
+                    [1,1,0],
+                    [0,1,1],
+                    [0,0,0]
+                ],
+                'T': [
+                    [0,1,0],
+                    [1,1,1],
+                    [0,0,0]
+                ]
+            };
+
+            // 各テトリミノの色
+            const colors = {
+                'I': 'cyan',
+                'O': 'yellow',
+                'T': 'purple',
+                'S': 'green',
+                'Z': 'red',
+                'J': 'blue',
+                'L': 'orange'
+            };
+
+            // ランダムなテトリミノを生成
+            function generateTetromino() {
+                const keys = Object.keys(tetrominoes);
+                const key = keys[Math.floor(Math.random() * keys.length)];
+                const matrix = tetrominoes[key];
+                return {
+                    name: key, // テトリミノの名前（例：'I', 'J', ...）
+                    matrix: matrix, // テトリミノの形状
+                    row: 0,
+                    col: Math.floor((10 - matrix[0].length) / 2) // 初期位置
+                };
+            }
+
+            // テトリミノをコピー
+            function rotate(matrix) {
+                const N = matrix.length - 1;
+                const result = matrix.map((row, i) =>
+                    row.map((val, j) => matrix[N - j][i])
+                );
+                return result;
+            }
+
+            // 衝突判定
+            function collide(playfield, tetromino) {
+                const { matrix, row, col } = tetromino;
+                for (let r = 0; r < matrix.length; r++) {
+                    for (let c = 0; c < matrix[r].length; c++) {
+                        if (matrix[r][c] && (playfield[r + row] && playfield[r + row][c + col]) !== 0) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+
+            // 行をクリア
+            function clearLines() {
+                outer: for (let row = playfield.length - 1; row >= 0; row--) {
+                    for (let col = 0; col < playfield[row].length; col++) {
+                        if (playfield[row][col] === 0) {
+                            continue outer;
+                        }
+                    }
+                    playfield.splice(row, 1);
+                    playfield.unshift(new Array(10).fill(0));
+                }
+            }
+
+            // テトリミノを固定
+            function freeze() {
+                const { matrix, row, col } = tetromino;
+                matrix.forEach((r, i) => {
+                    r.forEach((value, j) => {
+                        if (value) {
+                            playfield[row + i][col + j] = value;
+                        }
+                    });
+                });
+                clearLines();
+                tetromino = generateTetromino();
+            }
+
+            // テトリミノを描画
+            function drawTetromino() {
+                const { matrix, row, col } = tetromino;
+                matrix.forEach((r, i) => {
+                    r.forEach((value, j) => {
+                        if (value) {
+                            context.fillStyle = colors[tetromino.name];
+                            context.fillRect((col + j) * grid, (row + i) * grid, grid-1, grid-1);
+                        }
+                    });
+                });
+            }
+
+            // フィールドを描画
+            function drawPlayfield() {
+                for (let row = 0; row < playfield.length; row++) {
+                    for (let col = 0; col < playfield[row].length; col++) {
+                        if (playfield[row][col]) {
+                            context.fillStyle = colors[playfield[row][col]];
+                            context.fillRect(col * grid, row * grid, grid-1, grid-1);
+                        }
+                    }
+                }
+            }
+
+            // ゲームの更新
+            function updateGame() {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                drawPlayfield();
+                drawTetromino();
+            }
+
+            // テトリミノを落下
+            function drop() {
+                tetromino.row++;
+                if (collide(playfield, tetromino)) {
+                    tetromino.row--;
+                    freeze();
+                }
+            }
+
+            // ゲームのループ
+            let count = 0;
+            let tetromino = generateTetromino();
+            const playfield = Array.from({ length: 20 }, () => Array(10).fill(0));
+            function loop() {
+                requestAnimationFrame(loop);
+                if (++count > 35) {
+                    drop();
+                    count = 0;
+                }
+                updateGame();
+            }
+            document.addEventListener('keydown', (e) => {
+                if (e.keyCode === 37) { // 左
+                    tetromino.col--;
+                    if (collide(playfield, tetromino)) {
+                        tetromino.col++;
+                    }
+                } else if (e.keyCode === 39) { // 右
+                    tetromino.col++;
+                    if (collide(playfield, tetromino)) {
+                        tetromino.col--;
+                    }
+                } else if (e.keyCode === 40) { // 下
+                    drop();
+                } else if (e.keyCode === 81) { // Q: 回転
+                    const matrix = rotate(tetromino.matrix);
+                    if (!collide(playfield, { ...tetromino, matrix })) {
+                        tetromino.matrix = matrix;
+                    }
+                }
+            });
+
+            loop();
         }
     </script>
 </body>
