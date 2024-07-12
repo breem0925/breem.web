@@ -341,13 +341,13 @@
             };
 
             const colors = {
-                'I': 'cyan',
-                'O': 'yellow',
-                'T': 'purple',
-                'S': 'green',
-                'Z': 'red',
-                'J': 'blue',
-                'L': 'orange'
+                'I': '#00ffff',
+                'O': '#ffff00',
+                'T': '#800080',
+                'S': '#00ff00',
+                'Z': '#ff0000',
+                'J': '#0000ff',
+                'L': '#ffa500'
             };
 
             function generateTetromino() {
@@ -462,7 +462,7 @@
                     moveRight();
                 } else if (e.keyCode === 40) {
                     moveDown();
-                } else if (e.keyCode === 81) {
+                } else if (e.keyCode === 38 || e.keyCode === 81) {
                     rotateTetromino();
                 }
             });
