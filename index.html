@@ -253,6 +253,11 @@
         </div>
     </div>
 
+    <audio id="bgm" loop>
+        <source src="https://freesound.org/data/previews/616/616964_5674468-lq.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
     <script>
         // Animation for .....
         const dots = document.querySelector('.dots');
@@ -273,8 +278,7 @@
         let playfield;
         let count;
         let requestId;
-        const bgm = new Audio('https://www.example.com/path-to-your-8bit-music.mp3'); // 8bit BGMのURLに置き換えてください
-        bgm.loop = true;
+        const bgm = document.getElementById('bgm');
 
         function openTetris() {
             bgm.play();
@@ -341,13 +345,13 @@
             };
 
             const colors = {
-                'I': '#00ffff',
-                'O': '#ffff00',
-                'T': '#800080',
-                'S': '#00ff00',
-                'Z': '#ff0000',
-                'J': '#0000ff',
-                'L': '#ffa500'
+                'I': '#00bfff', // 落ち着いたシアン
+                'O': '#ffd700', // ゴールド
+                'T': '#9370db', // ミディアムパープル
+                'S': '#3cb371', // ミディアムシーグリーン
+                'Z': '#dc143c', // クリムゾン
+                'J': '#4682b4', // スチールブルー
+                'L': '#ff8c00' // ダークオレンジ
             };
 
             function generateTetromino() {
