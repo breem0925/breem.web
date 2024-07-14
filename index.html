@@ -116,25 +116,6 @@
         .contact-form button:hover {
             background-color: #333;
         }
-        .controls {
-            text-align: center;
-            margin: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .controls button {
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            padding: 15px 30px;
-            cursor: pointer;
-            margin: 5px;
-            border-radius: 4px;
-            font-size: 1.2em;
-        }
-        .controls button:hover {
-            background-color: #45a049;
-        }
         footer {
             background-color: black;
             color: white;
@@ -167,7 +148,7 @@
             border: 1px solid #888;
             max-width: 320px;
             width: 100%;
-            box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.5);
             position: relative;
         }
         #tetrisGame {
@@ -198,7 +179,7 @@
             background-color: #bbb;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
         .gameboy-buttons {
             margin-top: 20px;
@@ -602,7 +583,11 @@
         }
 
         function moveDown() {
-            drop();
+            tetromino.row++;
+            if (collide(playfield, tetromino)) {
+                tetromino.row--;
+                freeze();
+            }
         }
 
         function rotateTetromino() {
