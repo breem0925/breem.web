@@ -335,6 +335,7 @@
                 </div>
                 <div class="action-buttons">
                     <button onclick="rotateTetromino()">A</button>
+                    <button onclick="rotateTetrominoReverse()">B</button>
                 </div>
             </div>
             <div id="gameOverMessage">GAME OVER</div>
@@ -351,10 +352,16 @@
         Your browser does not support the audio element.
     </audio>
 
+    <audio id="gameOverSound">
+        <source src="https://freesound.org/data/previews/353/353227_5121236-lq.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
     <script>
         const dots = document.querySelector('.dots');
         const bgm = document.getElementById('bgm');
         const lineClearSound = document.getElementById('lineClearSound');
+        const gameOverSound = document.getElementById('gameOverSound');
         const gameOverMessage = document.getElementById('gameOverMessage');
 
         setInterval(() => {
@@ -463,6 +470,13 @@
                 );
             }
 
+            function rotateReverse(matrix) {
+                const N = matrix.length - 1;
+                return matrix.map((row, i) =>
+                    row.map((val, j) => matrix[j][N - i])
+                );
+            }
+
             function collide(playfield, tetromino) {
                 const { matrix, row, col } = tetromino;
                 for (let r = 0; r < matrix.length; r++) {
@@ -563,8 +577,10 @@
                     moveRight();
                 } else if (e.keyCode === 40) {
                     moveDown();
-                } else if (e.keyCode === 38 || e.keyCode === 81) {
+                } else if (e.keyCode === 65) { // 'A' key for rotation
                     rotateTetromino();
+                } else if (e.keyCode === 66) { // 'B' key for reverse rotation
+                    rotateTetrominoReverse();
                 }
             });
 
@@ -596,8 +612,16 @@
             }
         }
 
+        function rotateTetrominoReverse() {
+            const matrix = rotateReverse(tetromino.matrix);
+            if (!collide(playfield, { ...tetromino, matrix })) {
+                tetromino.matrix = matrix;
+            }
+        }
+
         function gameOver() {
             bgm.pause();
+            gameOverSound.play();
             gameOverMessage.style.display = 'block';
         }
     </script>
