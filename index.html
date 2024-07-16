@@ -146,14 +146,14 @@
             background-color: #fefefe;
             padding: 20px;
             border: 1px solid #888;
-            max-width: 320px;
-            width: 100%;
+            width: 250px;
+            height: 350px;
             box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.5);
             position: relative;
         }
         #tetrisGame {
             width: 100%;
-            height: 480px;
+            height: 100%;
             background-color: #ddd;
             display: block;
             margin: 0 auto;
@@ -189,19 +189,19 @@
         }
         .dpad {
             display: grid;
-            grid-template-columns: repeat(3, 50px);
-            grid-template-rows: repeat(3, 50px);
+            grid-template-columns: repeat(3, 20px);
+            grid-template-rows: repeat(3, 20px);
             gap: 5px;
         }
         .dpad button {
             background-color: #333;
             border: none;
             border-radius: 4px;
-            height: 50px;
-            width: 50px;
+            height: 20px;
+            width: 20px;
             cursor: pointer;
             color: #fff;
-            font-size: 1.5em;
+            font-size: 1em;
         }
         .action-buttons {
             display: flex;
@@ -212,11 +212,11 @@
             background-color: #333;
             border: none;
             border-radius: 50%;
-            height: 50px;
-            width: 50px;
+            height: 20px;
+            width: 20px;
             cursor: pointer;
             color: #fff;
-            font-size: 1.2em;
+            font-size: 1em;
         }
         #gameOverMessage {
             display: none;
@@ -305,7 +305,7 @@
     <div id="tetrisModal">
         <div id="tetrisContent" class="gameboy">
             <span class="close" onclick="closeTetris()">&times;</span>
-            <canvas id="tetrisGame" width="320" height="480"></canvas>
+            <canvas id="tetrisGame" width="160" height="288"></canvas>
             <div class="gameboy-buttons">
                 <div class="dpad">
                     <button onclick="moveLeft()">←</button>
@@ -382,7 +382,7 @@
         function initTetris() {
             const canvas = document.getElementById('tetrisGame');
             const context = canvas.getContext('2d');
-            const grid = 32;
+            const grid = 18;
 
             const tetrominoes = {
                 'I': [
@@ -543,7 +543,7 @@
 
             count = 0;
             tetromino = generateTetromino();
-            playfield = Array.from({ length: 20 }, () => Array(10).fill(0));
+            playfield = Array.from({ length: 16 }, () => Array(10).fill(0));
             function loop() {
                 requestId = requestAnimationFrame(loop);
                 if (++count > 35) {
